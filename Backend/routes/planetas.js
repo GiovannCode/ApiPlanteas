@@ -2,9 +2,15 @@ const express = require("express");
 const router = express.Router();
 const planetas = require("../data/dataPlanetas");
 
-// Ruta para obtener todos los planetas
+// Ruta para obtener todos los planetas organizados por nombre
 router.get("/", (req, res) => {
-    res.json(planetas);
+    const planetasPorNombre = {};
+    
+    planetas.forEach(planeta => {
+        planetasPorNombre[planeta.nombre] = planeta;
+    });
+
+    res.json(planetasPorNombre);
 });
 
 // Ruta para obtener un planeta por su nombre
