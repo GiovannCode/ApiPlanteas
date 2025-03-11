@@ -3,53 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información de Planetas</title>
-    <style>
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            width: 200px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
-            transition: transform 0.2s ease;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .card h3 {
-            margin: 10px 0;
-            color: #4c3a69;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
+    <title>Planetas del Sistema Solar</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
 </head>
 <body>
-    <h1>Información de los Planetas</h1>
-
-    <!-- Contenedor para las cards -->
-    <div class="card-container" id="card-container"></div>
-
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <div class="slide">
+                <div class="container-title">
+                </div>
+                <div class="card">
+                    <div class="gradient"></div>
+                    <p class="title">S o l</p>
+                    <p class="label">
+                        
+                    </p>
+                </div>
+                <model-viewer src="model/ImageToStl.com_sun.glb" 
+                alt="Modelo 3D"
+                camera-controls
+                disable-zoom
+                auto-rotate
+                exposure="0.3"
+                ar>
+                </model-viewer>
+            </div>
+            <div class="slide">
+                <div class="card-2">
+                    <div class="gradient-2"></div>
+                    <p class="title-2">uiverse</p>
+                    <p class="label-2">
+                    ui/ux designer trying to be an fullstack devolper<br />
+                    mom i love u
+                    </p>
+                </div>
+                <model-viewer src="model/mercurio_v1.1.glb" 
+                alt="Modelo 3D"
+                camera-controls
+                disable-zoom
+                auto-rotate
+                exposure="0.5"
+                ar>
+                </model-viewer>
+            </div>
+            <div class="slide">
+                <div class="card-3">
+                    <div class="gradient-3"></div>
+                    <p class="title-3">uiverse</p>
+                    <p class="label-3">
+                    ui/ux designer trying to be an fullstack devolper<br />
+                    mom i love u
+                    </p>
+                </div>
+                <model-viewer src="model/venus.glb" 
+                alt="Modelo 3D"
+                camera-controls
+                disable-zoom
+                auto-rotate
+                ar>
+                </model-viewer>
+            </div>
+            <div class="slide">
+                <div class="card-4">
+                    <div class="gradient-4"></div>
+                    <p class="title-4">uiverse</p>
+                    <p class="label-4">
+                    ui/ux designer trying to be an fullstack devolper<br />
+                    mom i love u
+                    </p>
+                </div>
+                <model-viewer src="model/earth.glb" 
+                alt="Modelo 3D"
+                camera-controls
+                disable-zoom
+                auto-rotate
+                exposure="0.5"
+                ar>
+                </model-viewer>
+            </div>
+            <div class="slide">
+                <div class="card-5">
+                    <div class="gradient-5"></div>
+                    <p class="title-5">uiverse</p>
+                    <p class="label-5">
+                    ui/ux designer trying to be an fullstack devolper<br />
+                    mom i love u
+                    </p>
+                </div>
+                <model-viewer src="model/marte_v1.1.glb" 
+                alt="Modelo 3D"
+                camera-controls
+                disable-zoom
+                auto-rotate
+                ar>
+                </model-viewer>
+            </div>
+            <div class="slide">
+                <div class="card-6">
+                    <div class="gradient-6"></div>
+                    <p class="title-6">uiverse</p>
+                    <p class="label-6">
+                    ui/ux designer trying to be an fullstack devolper<br />
+                    mom i love u
+                    </p>
+                </div>
+                <model-viewer src="model/jupiter.glb" 
+                alt="Modelo 3D"
+                camera-controls
+                disable-zoom
+                auto-rotate
+                ar>
+                </model-viewer>
+            </div>
+            <div class="slide">
+                <div class="card-7">
+                    <div class="gradient-7"></div>
+                    <p class="title-7">uiverse</p>
+                    <p class="label-7">
+                    ui/ux designer trying to be an fullstack devolper<br />
+                    mom i love u
+                    </p>
+                </div>
+                <model-viewer src="model/saturno_v1.1.glb" 
+                alt="Modelo 3D"
+                camera-controls
+                disable-zoom
+                auto-rotate
+                ar>
+                </model-viewer>
+            </div>
+            <div class="slide">
+                <div class="card-8">
+                    <div class="gradient-8"></div>
+                    <p class="title-8">uiverse</p>
+                    <p class="label-8">
+                    ui/ux designer trying to be an fullstack devolper<br />
+                    mom i love u
+                    </p>
+                </div>
+                <model-viewer src="model/urano.glb" 
+                alt="Modelo 3D"
+                camera-controls
+                disable-zoom
+                auto-rotate
+                ar>
+                </model-viewer>
+            </div>
+            <div class="slide">
+                <div class="card-9">
+                    <div class="gradient-9"></div>
+                    <p class="title-9">uiverse</p>
+                    <p class="label-9">
+                    ui/ux designer trying to be an fullstack devolper<br />
+                    mom i love u
+                    </p>
+                </div>
+                <model-viewer src="model/neptune (3).glb" 
+                alt="Modelo 3D"
+                camera-controls
+                disable-zoom
+                auto-rotate
+                ar>
+                </model-viewer>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button onclick="goToSlide(0)"><img src="img/sun.png" alt=""></button>
+        <button onclick="goToSlide(1)"><img src="img/mercurio.png" alt=""></button>
+        <button onclick="goToSlide(2)"><img src="img/venus.png" alt=""></button>
+        <button onclick="goToSlide(3)"><img src="img/planeta-tierra.png" alt=""></button>
+        <button onclick="goToSlide(4)"><img src="img/marte.png" alt=""></button>
+        <button onclick="goToSlide(5)"><img src="img/jupiter.png" alt=""></button>
+        <button onclick="goToSlide(6)"><img src="img/saturno.png" alt=""></button>
+        <button onclick="goToSlide(7)"><img src="img/urano.png" alt=""></button>
+        <button onclick="goToSlide(8)"><img src="img/neptuno.png" alt=""></button>
+    </div>
+    <div class="stars"></div>
     <script src="app.js"></script>
 </body>
 </html>

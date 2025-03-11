@@ -17,7 +17,7 @@ const planetas = [
       periodo_orbital: "225 días",
       rotacion: "243 días retrógrados",
       atmosfera: "Compuesta principalmente de dióxido de carbono y nubes de ácido sulfúrico.",
-      imagen: "https://example.com/venus.jpg"
+
     },
     {
       nombre: "Tierra",

@@ -11,6 +11,13 @@ app.use(express.static(path.join(__dirname, "../frontend/public"))); // Servir f
 // Rutas de la API
 app.use("/api/planetas", planetasRoutes);
 
+app.use((req, res, next) => {
+    if (req.url.endsWith('.glb')) {
+        res.setHeader('Content-Type', 'model/gltf-binary');
+    }
+    next();
+});
+
 // Iniciar servidor
 const PORT = 3000;
 app.listen(PORT, () => {

@@ -1,23 +1,633 @@
-body {
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway+Dots&display=swap');
+* { 
+    box-sizing: border-box; margin: 0; padding: 0; 
+}
+body { 
+    font-family: "Montserrat";
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    background: #000000; 
+    overflow: hidden;
+}
+.carousel-container { 
+    position: relative; 
+    width: 100%; 
+    height: 100vh;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+}
+.carousel { 
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
+}
+
+.slide { 
+    min-width: 100%; 
+    height: 100vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column;
+    font-size: 24px; 
+    color: white; 
+    position: relative;
+    
+}
+.slide {
+    opacity: 0;
+    transform: translateY(500px); 
+    transition: opacity 1.5s ease-in-out, transform 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.slide:nth-child(1) { 
+    background: #00274600; 
+    border-radius: 40px;
+    position: relative;
+}
+
+.slide:nth-child(1) model-viewer{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 0, 0, 0);
+    filter: drop-shadow(0px 0px 50px rgb(255, 102, 0));
+    
+}
+
+.container-title p{
+    width: 100%;
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    font-family: "Montserrat";
     text-align: center;
-    background-color: #f4f4f4;
 }
 
-h1 {
-    color: #333;
+.slide:nth-child(2) { 
+    background: #33c2ff00; 
+    border-radius: 40px;
+}
+.slide:nth-child(2) model-viewer{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 0, 0, 0);
+    filter: drop-shadow(0px 0px 50px #7c7978);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.slide:nth-child(3) { 
+    background: #74ff3300; 
+    border-radius: 40px;
+}
+.slide:nth-child(3) model-viewer{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    filter: drop-shadow(0px 0px 50px #be8065);
 }
 
-li {
-    background: white;
-    margin: 10px auto;
-    padding: 15px;
+.slide:nth-child(4) { 
+    background: #ff33f100; 
+    border-radius: 40px;
+}
+.slide:nth-child(4) model-viewer{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    filter: drop-shadow(0px 0px 50px #234170);
+}
+
+.slide:nth-child(5) { 
+    background: #ff333300; 
+    border-radius: 40px;
+}
+.slide:nth-child(5) model-viewer{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    filter: drop-shadow(0px 0px 50px #e89381);
+}
+
+.slide:nth-child(6) { 
+    background: #8533ff00; 
+    border-radius: 40px;
+}
+.slide:nth-child(6) model-viewer{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    filter: drop-shadow(0px 0px 50px #efe1d0);
+}
+
+.slide:nth-child(7) { 
+    background: #33ff9c00; 
+    border-radius: 40px;
+}
+.slide:nth-child(7) model-viewer{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    filter: drop-shadow(0px 0px 1px #edd8bf);
+}
+
+.slide:nth-child(8) { 
+    background: #ff9c3300; 
+    border-radius: 40px;
+}
+.slide:nth-child(8) model-viewer{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 0, 0, 0);
+}
+.slide:nth-child(9) { 
+    background: #ff9c3300; 
+    border-radius: 40px;
+}
+.slide:nth-child(9) model-viewer{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    filter: drop-shadow(0px 0px 50px #9db6ed);
+}
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+model-viewer {
+    animation: fadeInScale 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+.buttons { 
+    display: flex; 
+    gap: 10px; 
+    position: absolute;
+    top: 20px;
+
+}
+.buttons button { 
+    width: 40px;
+    height: 40px;
+    border: none; 
+    background: rgba(255,255,255,0.15);
+    -webkit-backdrop-filter: blur(13px);
+    backdrop-filter: blur(13px);
+    border: 1px solid rgba(255,255,255,0.075);
+    color: white; 
+    cursor: pointer; 
+    border-radius: 50%; 
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.buttons button:hover { 
+    background: #555; 
+}
+
+.buttons img { 
+    width: 30px; 
+    height: 30px; 
+    filter: grayscale(94%);
+    -webkit-filter: grayscale(94%);
+    -moz-filter: grayscale(94%);
+}
+
+.buttons img:hover { 
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+}
+
+.buttons img:active { 
+    filter: grayscale(94%); 
+    -webkit-filter: grayscale(94%);
+    -moz-filter: grayscale(94%);
+}
+
+.buttons button.active { 
+    background: #444; 
+}
+
+.buttons button.active img { 
+    filter: grayscale(0%); /* Elimina el filtro de escala de grises del ícono */
+}
+
+
+.stars {
+    width: 0.2px;
+    height: 0.2px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    animation: moveStars 5s linear infinite;
+    opacity: 0.8;
+    z-index: -1000;
+}
+@keyframes moveStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.card {
+    font-family: "Poppins", sans-serif;
+    width: 562px;
+    height: 289px;
     border-radius: 8px;
-    max-width: 400px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(36, 36, 36, 0.05);
+    padding: 16px 32px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.251);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    right: 50px;
 }
+
+.card-2 {
+    font-family: "Poppins", sans-serif;
+    width: 562px;
+    height: 289px;
+    border-radius: 8px;
+    background-color: rgba(36, 36, 36, 0.05);
+    padding: 16px 32px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.251);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    left: 50px;
+}
+
+.card-3 {
+    font-family: "Poppins", sans-serif;
+    width: 562px;
+    height: 289px;
+    border-radius: 8px;
+    background-color: rgba(36, 36, 36, 0.05);
+    padding: 16px 32px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.251);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    right: 50px;
+}
+
+.card-4 {
+    font-family: "Poppins", sans-serif;
+    width: 562px;
+    height: 289px;
+    border-radius: 8px;
+    background-color: rgba(36, 36, 36, 0.05);
+    padding: 16px 32px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.251);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    left: 50px;
+}
+.card-5 {
+    font-family: "Poppins", sans-serif;
+    width: 562px;
+    height: 289px;
+    border-radius: 8px;
+    background-color: rgba(36, 36, 36, 0.05);
+    padding: 16px 32px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.251);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    right: 50px;
+}
+
+.card-6 {
+    font-family: "Poppins", sans-serif;
+    width: 562px;
+    height: 289px;
+    border-radius: 8px;
+    background-color: rgba(36, 36, 36, 0.05);
+    padding: 16px 32px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.251);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    left: 50px;
+}
+.card-7 {
+    font-family: "Poppins", sans-serif;
+    width: 562px;
+    height: 289px;
+    border-radius: 8px;
+    background-color: rgba(36, 36, 36, 0.05);
+    padding: 16px 32px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.251);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    right: 50px;
+}
+.card-8 {
+    font-family: "Poppins", sans-serif;
+    width: 562px;
+    height: 289px;
+    border-radius: 8px;
+    background-color: rgba(36, 36, 36, 0.05);
+    padding: 16px 32px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.251);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    left: 50px;
+}
+.card-9 {
+    font-family: "Poppins", sans-serif;
+    width: 562px;
+    height: 289px;
+    border-radius: 8px;
+    background-color: rgba(36, 36, 36, 0.05);
+    padding: 16px 32px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.251);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    right: 50px;
+}
+
+
+.title, .title-2, .title-3, .title-4, .title-5, .title-6, .title-7, .title-8, .title-9 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.label, .label-2, .label-3, .label-4, .label-5, .label-6, .label-7, .label-8, .label-9 {
+    font-size: 18px;
+    color: #ffffff;
+    opacity: 0.8;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-image: linear-gradient(to bottom, #d75600, #ff5c5c);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+
+.card-2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-image: linear-gradient(to bottom, #ffffff, #5e5e5e);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+
+.card-3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-image: linear-gradient(to bottom, #ff954e, #ffa114);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+
+.card-4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-image: linear-gradient(to bottom, #0026ff, #439600);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+.card-5::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-image: linear-gradient(to bottom, #f96400, #f47805);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+.card-6::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-image: linear-gradient(to bottom, #ffc49d, #ffa114);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+.card-7::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-image: linear-gradient(to bottom, #ffaf79, #dedddc);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+.card-8::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-image: linear-gradient(to bottom, #067cd7, #14ffef);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+.card-9::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-image: linear-gradient(to bottom, #4e6cff, #1486ff);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.3s ease;
+}
+
+
+.card:hover::before,.card-2:hover::before,.card-3:hover::before,.card-4:hover::before,.card-5:hover::before,.card-6:hover::before,.card-7:hover::before,.card-8:hover::before,.card-9:hover::before {
+    width: 10px;
+}
+
+.card:hover,.card-2:hover,.card-3:hover,.card-4:hover,.card-5:hover,.card-6:hover,.card-7:hover,.card-8:hover,.card-9:hover {
+    border-left-width: 10px;
+}
+
+.title,.title-2,.label,.label-2,.title-3,.label-3,.title-4,.label-4,.title-5,.label-5,.title-6,.label-6,.title-7,.label-7,.title-8,.label-8,.title-9,.label-9 {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .title,
+.card:hover .label {
+    transform: translateX(20px);
+}
+
+.card-2:hover .title-2,
+.card-2:hover .label-2 {
+    transform: translateX(20px);
+}
+
+.card-3:hover .title-3,
+.card-3:hover .label-3 {
+    transform: translateX(20px);
+}
+
+.card-4:hover .title-4,
+.card-4:hover .label-4 {
+    transform: translateX(20px);
+}
+.card-5:hover .title-5,
+.card-5:hover .label-5 {
+    transform: translateX(20px);
+}
+.card-6:hover .title-6,
+.card-6:hover .label-6 {
+    transform: translateX(20px);
+}
+.card-7:hover .title-7,
+.card-7:hover .label-7 {
+    transform: translateX(20px);
+}
+.card-8:hover .title-8, 
+.card-8:hover .label-8 {
+    transform: translateX(20px);
+}
+.card-9:hover .title-9,
+.card-9:hover .label-9 {
+    transform: translateX(20px);
+}
+
+.gradient, .gradient-2, .gradient-3, .gradient-4, .gradient-5, .gradient-6, .gradient-7, .gradient-8, .gradient-9 {
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: #ffffff;
+    border-radius: 50%;
+    filter: blur(200px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .gradient, .card-2:hover .gradient-2, .card-3:hover .gradient-3, .card-4:hover .gradient-4, .card-5:hover .gradient-5, .card-6:hover .gradient-6, .card-7:hover .gradient-7, .card-8:hover .gradient-8, .card-9:hover .gradient-9 {
+    opacity: 0.04;
+}
+

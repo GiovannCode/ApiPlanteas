@@ -30,3 +30,35 @@ fetch("http://localhost:3000/api/planetas")
         console.error("Error al obtener los planetas:", error);
         document.getElementById("card-container").innerHTML = "<p>No se pudieron cargar los planetas.</p>";
     });
+    function goToSlide(index) {
+        const carousel = document.getElementById('carousel');
+        const slides = document.querySelectorAll('.slide');
+        const buttons = document.querySelectorAll('.buttons button');
+    
+        const offset = -index * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+    
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+        buttons.forEach(button => button.classList.remove('active'));
+        buttons[index].classList.add('active');
+        
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        goToSlide(0);
+    });
+    
+    const numStars = 300;
+    for (let i = 0; i < numStars; i++) {
+        let star = document.createElement("div");
+        star.className = "stars";
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.animationDuration = `${8 + Math.random() * 8}s`; 
+        star.style.animationDelay = `-${Math.random() * 8}s`; 
+        document.body.appendChild(star);
+    }
